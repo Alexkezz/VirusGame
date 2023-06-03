@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-image: url("/img/backround2.png"); */
+    background-color: #CCCCFF;
+    background-size: cover;
+    font-family: 'Calibri'; 
+}
+
+.container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content:space-between;
+    background-color:  white;
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    border-radius: 5vh;
+    background-image: url("https://www.xtrafondos.com/descargar.php?id=2927&resolucion=1920x1200");
+}
+
+.maquinaLogo{
+    position: absolute;
+    width: 13%;
+    left: 2vh;
+    top: 3vh;
+    border: 3px solid black;
+    border-radius: 12vh;
+    z-index: 1;
+    background-color: white;
+}
+
+.playerLogo{
+    position: absolute;
+    width: 13%;
+    bottom: 3vh;
+    right: 2vh;
+    border: 3px solid black;
+    border-radius: 12vh;
+    z-index: 1;
+    background-color: white;
+}
+
+.tablero{
+    display: flex;
+    width: 70%;
+    height: 22vw;
+    border-radius: 3vh;
+    border: 4px solid white;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.maquinaTablero{
+    background-color: #45B39D;
+    align-self: flex-end;
+    margin-right: 5vh;
+    margin-top: 2vh;
+}
+
+.playerTablero{
+    background-color: #5DADE2;
+    margin-left: 5vh;
+    margin-bottom: 2vh;
+}
+
+
+.cardsContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 20%;
+    height: 21vw;
+    border-radius: 10px;  
+    border: dashed 5px rgba(255, 0, 0, 0);
+}
+
+.cards{
+    position: absolute;
+    z-index: 0;
+    width: 9%;
+    transition: width 0.5s;
+}
+
+.cards:hover{
+    width: 10%;
+}
+
+.playerCard1{
+    right: 1%;
+    bottom: 9vw;
+}
+
+.playerCard2{
+    right: 9%;
+    bottom: 8vw;
+    transform: rotate(-30deg);
+}
+
+.playerCard3{
+    right: 14%;
+    bottom: 3vw;
+    transform: rotate(-50deg);
+}
+
+.maquinaCard1{
+    top: 10vw;
+    transform: rotate(170deg);
+    left: 2%;
+}
+
+.maquinaCard2{
+    left: 11%;
+    top: 7.5vw;
+    transform: rotate(120deg);
+}
+
+.maquinaCard3{
+    left: 14%;
+    top: 1vw;
+    transform: rotate(90deg);
+}
+
+.startGame{
+    position: absolute;
+    background-color: rgb(223, 218, 218);
+    font-weight: bold;
+    border: 3px solid black;
+    width: 8%;
+    border-radius: 10px;
+    padding: 1vh;
+    text-align: center;
+    left: 1%;
+    top: 2.5%;
+}
+
+.startGame:hover{
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+.drag-over {
+    border: dashed 5px #884EA0;
+    transition: border-color 1s;
+}
+
+.hide {
+    display: none;
+}
+
+.cardDentroTablero0{
+    position: absolute;
+    width: 70%;
+}
+
+.cardDentroTablero1{
+    position: absolute;
+    width: 70%;
+    top: 5vw;
+}
+
+.cardDentroTablero2{
+    position: absolute;
+    width: 70%;
+    top: 9.5vw;
+}
+
+.trash{
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    bottom: 0%;
+    right: 0%;
+}
+
+.deck{
+    position: absolute;
+    width: 8%;
+    top: 35vh;
+    left: 2vh;
+}
+
+.acabarTorn{
+    position: absolute;
+    background-color: rgb(223, 218, 218);
+    font-weight: bold;
+    border: 3px solid black;
+    width: 8%;
+    border-radius: 10px;
+    padding: 1vh;
+    text-align: center;
+    right: 1%;
+    top: 2.5%;  
+    display: none;  
+}
+
+.acabarTorn:hover{
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+.winner{
+    position: absolute;
+    background-color:#4945b3;
+    color: white;
+    font-weight: bold;
+    font-size: 4vw;
+    border-radius: 10px;
+    padding: 1vh;
+    text-align: center;
+    z-index: 2;
+    left: 37vw;
+    top: 20vw;
+    display: none;
+}
+
+#GameModeDiv{
+    position: absolute;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.534);
+    width:100vw;
+    height:100vh; 
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.alertMode{
+    display: flex;
+    justify-content:space-around;
+    flex-direction: column;
+    width: 40vw;
+    height:60vh;
+    background-color: white; 
+    z-index: 3;
+    border-radius: 3%;
+    padding: 1%;
+    animation-name: moveFromOutside;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes moveFromOutside {
+    from {
+      transform: translateY(-600px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+.explicacio{
+    text-align: center;
+    font-size: 2.4vh;
+    font-family: "Calibri";
+}
+
+.buttonsMode{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonM{
+    background-color:#82c8ba;
+    padding: 2%;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.buttonM:hover{
+    background-color:#5DADE2;
+    cursor: pointer;
+}
+
+.titleMode{
+    text-align: center;
+    font-size: 5vh;
+}
+
+
+
+
+
